@@ -1,0 +1,49 @@
+--- etc/translate_inputmode_list.conf	2019-08-08 17:58:35.000000000 +0600
++++ ../mount/system/etc/translate_inputmode_list.conf	2021-02-23 15:20:33.000000000 +0600
+@@ -1,14 +1,34 @@
++jp.konami.duellinks
++jp.illusion.orega
+ com.ztgame.bob
+-com.hoolai.zcfy.gfan
++com.xd.ro.roapk
++com.wanmei.torchlight.android.ewan
++com.thevoxelagents.tc3
++com.qihoo.wm
++com.noodlecake.altosadventure
+ com.netease.ma59.uc
+-com.channel4.eden.st2
+-com.devolver.reigns.st
++com.madhead.tos.zh
++com.leftover.CoinDozer
+ com.imangi.templerun2
++com.hoolai.zcfy.gfan
++com.devolver.reigns.st
++com.channel4.eden.st2
+ jp.illusion.orega
+-com.leftover.CoinDozer
+-com.madhead.tos.zh
+-com.qihoo.wm
+-com.xd.ro.roapk
+-com.noodlecake.altosadventure
+-jp.konami.duellinks
+-com.thevoxelagents.tc3
+\ No newline at end of file
++com.tencent.freestyle
++com.pixonic.wwr
++com.tencent.tmgp.xymobile
++com.tencent.tmgp.tstl
++com.wooduan.ssjj.c360
++com.gravity.ro.and
++com.searttdrg.dfsdsgsfad
++com.tencent.tmgp.dragonnest
++com.wanmei.torchlight.android.wdj
++com.tencent.tmgp.sgamece
++com.wanmei.torchlight.android.qh360
++com.wooduan.ssjj.uc
++com.çrisisfire.android.qihoo
++com.wooduan.ssjj
++com.tencent.cldts
++com.camelgames.superking.cn
++com.camelgames.superking.taptap
++com.tencent.tmgp.sgame
+\ No newline at end of file

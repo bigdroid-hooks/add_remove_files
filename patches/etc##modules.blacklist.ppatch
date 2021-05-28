@@ -1,0 +1,8 @@
+--- etc/modules.blacklist	2019-08-08 17:58:35.000000000 +0600
++++ ../mount/system/etc/modules.blacklist	2021-02-14 12:46:28.000000000 +0600
+@@ -3,3 +3,5 @@
+ deferred  nouveau
+ deferred  radeon
+ deferred  soc_button_array
++blacklist pcspkr
++blacklist lsrot

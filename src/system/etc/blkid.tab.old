@@ -1,0 +1,9 @@
+<device DEVNO="0x0811" TIME="1614351920" UUID="01D5D7D1E0F161F0" LABEL="Gaming boiiiiiii" TYPE="ntfs">/dev/block/sdb1</device>
+<device DEVNO="0x0812" TIME="1614351920" UUID="01D5D7D37E5EA1E0" LABEL="Idk what to name this disk" TYPE="ntfs">/dev/block/sdb2</device>
+<device DEVNO="0x0813" TIME="1614351918" LABEL="Work" UUID="91b44e60-17fc-4c31-87d6-b4caf28487f4" TYPE="ext4">/dev/block/sdb3</device>
+<device DEVNO="0x0814" TIME="1614351918" LABEL="Darkmatter" UUID="35dc3d59-3dc4-4252-8e2b-c133f6495f75" TYPE="ext4">/dev/block/sdb4</device>
+<device DEVNO="0x0801" TIME="1614351918" UUID="12628720628707A5" LABEL="Just Windows" TYPE="ntfs">/dev/block/sda1</device>
+<device DEVNO="0x0802" TIME="1614351918" UUID="d64c6c54-06a3-42e2-a2ab-987a11a3e83d" TYPE="ext4">/dev/block/sda2</device>
+<device DEVNO="0x0803" TIME="1614351918" LABEL="EFI" UUID="B820-BAE6" TYPE="vfat">/dev/block/sda3</device>
+<device DEVNO="0x0804" TIME="1614351918" TYPE="swap" UUID="3b0c6a72-c740-4c83-8f09-fb540e0b7bd2">/dev/block/sda4</device>
+<device DEVNO="0x0805" TIME="1614351918" UUID="81859e13-24a3-41be-b8ea-e6a982a4ca59" TYPE="f2fs">/dev/block/sda5</device>

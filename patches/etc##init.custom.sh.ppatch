@@ -1,0 +1,8 @@
+--- etc/init.custom.sh	2019-08-08 17:58:35.000000000 +0600
++++ ../mount/system/etc/init.custom.sh	2019-12-23 15:18:23.000000000 +0600
+@@ -43,5 +43,4 @@
+ done < $blkid_tmp
+ 
+ rm $blkid_tmp
+-
+ return 0

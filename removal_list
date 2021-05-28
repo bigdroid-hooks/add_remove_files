@@ -1,0 +1,87 @@
+#           Variables - BigDroid Internals
+#           - Only for advanced scripting -
+#           ###############################
+#
+#   BASE_DIR            % The root dir where you find files like: bigdroid, bin, src.
+#                       % Hope it explains the rest.
+#
+#   SRC_DIR             % The 'src' dir under BASE_DIR.
+#
+#   HOOKS_DIR           % The 'hooks' dir under BASE_DIR.
+#
+#   HOOK_BASE           % This variable points to the root-dir
+#                       % of every bigdroid hook which is being run during their runtime.
+#
+#   MOUNT_DIR           % The parent dir which holds other child mountpoint dirs.
+#                       % Followed by: system, secondary_ramdisk, initial_ramdisk and install_ramdisk.
+#                       % We also have SYSTEM_MOUNT_DIR, SECONDARY_RAMDISK_MOUNT_DIR
+#                       % INITIAL_RAMDISK_MOUNT_DIR and INSTALL_RAMDISK_MOUNT_DIR variables.
+#
+#   ISO_DIR             % Your configured ISO by the '--setup-iso' argument is cached in this dir.
+#
+#   BUILD_DIR           % This dir is used as the temporary boilerplate while building an ISO/IMAGE.
+#
+#   TMP_DIR             % You can use this dir for storing temporary files.
+#                       % It's more like '/tmp' as in your linux distro.
+#
+#   OVERLAY_DIR         % The overlay dir under BASE_DIR
+#
+#   DISTRO_NAME         % Your android distro name as per 'hooks/distro.sh' or the defaults.
+#
+#   DISTRO_VERSION      % Your android distro version as per 'hooks/distro.sh' or the defaults.
+#
+#   @@ Protip: Take a look at 'src/main.sh'.
+
+
+
+# Name all the files in such manner
+"$SYSTEM_DIR/.Trash-0"
+"$INITIAL_RAMDISK_MOUNT_DIR/bin/x86update"
+"$INITIAL_RAMDISK_MOUNT_DIR/twres"
+
+# Excess phoenixos bloat
+"$SYSTEM_DIR/app/baidushurufa"
+"$SYSTEM_DIR/app/BookmarkProvider"
+"$SYSTEM_DIR/app/Camera2"
+"$SYSTEM_DIR/app/CloudPC"
+"$SYSTEM_DIR/app/CZFeedback"
+"$SYSTEM_DIR/app/CZGameMaster"
+"$SYSTEM_DIR/app/CZPreInstallApps"
+"$SYSTEM_DIR/app/CZRecommended"
+"$SYSTEM_DIR/app/CZTextEditor"
+"$SYSTEM_DIR/app/CZVoiceRecorder"
+"$SYSTEM_DIR/app/DeskClock"
+"$SYSTEM_DIR/app/Email"
+"$SYSTEM_DIR/app/ExactCalculator"
+"$SYSTEM_DIR/app/FileManager"
+"$SYSTEM_DIR/app/Gallery2"
+"$SYSTEM_DIR/app/GoogleCalendarSyncAdapter"
+"$SYSTEM_DIR/app/GoogleContactsSyncAdapter"
+"$SYSTEM_DIR/app/launchwork"
+"$SYSTEM_DIR/app/PandaNES"
+"$SYSTEM_DIR/app/PhoenixOneForx86"
+"$SYSTEM_DIR/app/phoenixvip"
+"$SYSTEM_DIR/app/PicoTts"
+"$SYSTEM_DIR/app/PrintRecommendationService"
+"$SYSTEM_DIR/app/PrintSpooler"
+"$SYSTEM_DIR/app/qyxc"
+"$SYSTEM_DIR/app/StardustBrowser_pad"
+"$SYSTEM_DIR/priv-app/BlockedNumberProvider"
+"$SYSTEM_DIR/priv-app/ConfigUpdater"
+"$SYSTEM_DIR/priv-app/CZNoviceHelp"
+"$SYSTEM_DIR/priv-app/CZPermissionController"
+"$SYSTEM_DIR/priv-app/CZSetupWizard"
+"$SYSTEM_DIR/priv-app/CZStatisticsProvider"
+"$SYSTEM_DIR/priv-app/CZSystemUpdate"
+"$SYSTEM_DIR/priv-app/GmsCore"
+"$SYSTEM_DIR/priv-app/GoogleBackupTransport"
+"$SYSTEM_DIR/priv-app/GoogleFeedback"
+"$SYSTEM_DIR/priv-app/GoogleLoginService"
+"$SYSTEM_DIR/priv-app/GoogleOneTimeInitializer"
+"$SYSTEM_DIR/priv-app/GooglePartnerSetup"
+"$SYSTEM_DIR/priv-app/GoogleServicesFramework"
+"$SYSTEM_DIR/priv-app/Launcher3"
+"$SYSTEM_DIR/priv-app/Phonesky"
+"$SYSTEM_DIR/priv-app/Telecom"
+"$SYSTEM_DIR/priv-app/TelephonyProvider"
+"$SYSTEM_DIR/priv-app/TeleService"

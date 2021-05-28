@@ -1,0 +1,1058 @@
+--- etc/alsa/bytcrrt5640.state	2019-08-08 17:58:36.000000000 +0600
++++ ../mount/system/etc/alsa/bytcrrt5640.state	2020-09-09 14:07:43.000000000 +0600
+@@ -1731,8 +1731,8 @@
+ 	control.156 {
+ 		iface MIXER
+ 		name 'HP Channel Switch'
+-		value.0 false
+-		value.1 false
++		value.0 true
++		value.1 true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+@@ -1742,8 +1742,8 @@
+ 	control.157 {
+ 		iface MIXER
+ 		name 'HP Playback Volume'
+-		value.0 0
+-		value.1 0
++		value.0 29
++		value.1 29
+ 		comment {
+ 			access 'read write'
+ 			type INTEGER
+@@ -1751,8 +1751,8 @@
+ 			range '0 - 39'
+ 			dbmin -4650
+ 			dbmax 1200
+-			dbvalue.0 -4650
+-			dbvalue.1 -4650
++			dbvalue.0 -300
++			dbvalue.1 -300
+ 		}
+ 	}
+ 	control.158 {
+@@ -1907,6 +1907,17 @@
+ 	}
+ 	control.169 {
+ 		iface MIXER
++		name 'Mono ADC Capture Switch'
++		value.0 true
++		value.1 true
++		comment {
++			access 'read write'
++			type BOOLEAN
++			count 2
++		}
++	}
++	control.170 {
++		iface MIXER
+ 		name 'Mono ADC Capture Volume'
+ 		value.0 47
+ 		value.1 47
+@@ -1921,7 +1932,7 @@
+ 			dbvalue.1 0
+ 		}
+ 	}
+-	control.170 {
++	control.171 {
+ 		iface MIXER
+ 		name 'ADC Boost Gain'
+ 		value.0 0
+@@ -1937,7 +1948,7 @@
+ 			dbvalue.1 0
+ 		}
+ 	}
+-	control.171 {
++	control.172 {
+ 		iface MIXER
+ 		name 'Class D SPK Ratio Control'
+ 		value '2.77x'
+@@ -1958,7 +1969,7 @@
+ 			item.10 '2.77x'
+ 		}
+ 	}
+-	control.172 {
++	control.173 {
+ 		iface MIXER
+ 		name 'ADC IF1 Data Switch'
+ 		value Normal
+@@ -1972,7 +1983,7 @@
+ 			item.3 'right copy to left'
+ 		}
+ 	}
+-	control.173 {
++	control.174 {
+ 		iface MIXER
+ 		name 'DAC IF1 Data Switch'
+ 		value Normal
+@@ -1986,7 +1997,7 @@
+ 			item.3 'right copy to left'
+ 		}
+ 	}
+-	control.174 {
++	control.175 {
+ 		iface MIXER
+ 		name 'ADC IF2 Data Switch'
+ 		value Normal
+@@ -2000,7 +2011,7 @@
+ 			item.3 'right copy to left'
+ 		}
+ 	}
+-	control.175 {
++	control.176 {
+ 		iface MIXER
+ 		name 'DAC IF2 Data Switch'
+ 		value Normal
+@@ -2014,17 +2025,17 @@
+ 			item.3 'right copy to left'
+ 		}
+ 	}
+-	control.176 {
++	control.177 {
+ 		iface MIXER
+ 		name 'Headphone Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.177 {
++	control.178 {
+ 		iface MIXER
+ 		name 'Headset Mic Switch'
+ 		value true
+@@ -2034,7 +2045,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.178 {
++	control.179 {
+ 		iface MIXER
+ 		name 'Internal Mic Switch'
+ 		value true
+@@ -2044,7 +2055,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.179 {
++	control.180 {
+ 		iface MIXER
+ 		name 'Speaker Switch'
+ 		value true
+@@ -2054,7 +2065,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.180 {
++	control.181 {
+ 		iface MIXER
+ 		name 'RECMIXL HPOL Switch'
+ 		value false
+@@ -2064,7 +2075,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.181 {
++	control.182 {
+ 		iface MIXER
+ 		name 'RECMIXL INL Switch'
+ 		value false
+@@ -2074,7 +2085,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.182 {
++	control.183 {
+ 		iface MIXER
+ 		name 'RECMIXL BST3 Switch'
+ 		value true
+@@ -2084,17 +2095,17 @@
+ 			count 1
+ 		}
+ 	}
+-	control.183 {
++	control.184 {
+ 		iface MIXER
+ 		name 'RECMIXL BST2 Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.184 {
++	control.185 {
+ 		iface MIXER
+ 		name 'RECMIXL BST1 Switch'
+ 		value false
+@@ -2104,7 +2115,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.185 {
++	control.186 {
+ 		iface MIXER
+ 		name 'RECMIXL OUT MIXL Switch'
+ 		value false
+@@ -2114,7 +2125,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.186 {
++	control.187 {
+ 		iface MIXER
+ 		name 'RECMIXR HPOR Switch'
+ 		value false
+@@ -2124,7 +2135,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.187 {
++	control.188 {
+ 		iface MIXER
+ 		name 'RECMIXR INR Switch'
+ 		value false
+@@ -2134,7 +2145,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.188 {
++	control.189 {
+ 		iface MIXER
+ 		name 'RECMIXR BST3 Switch'
+ 		value true
+@@ -2144,17 +2155,17 @@
+ 			count 1
+ 		}
+ 	}
+-	control.189 {
++	control.190 {
+ 		iface MIXER
+ 		name 'RECMIXR BST2 Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.190 {
++	control.191 {
+ 		iface MIXER
+ 		name 'RECMIXR BST1 Switch'
+ 		value false
+@@ -2164,7 +2175,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.191 {
++	control.192 {
+ 		iface MIXER
+ 		name 'RECMIXR OUT MIXR Switch'
+ 		value false
+@@ -2174,7 +2185,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.192 {
++	control.193 {
+ 		iface MIXER
+ 		name 'Stereo ADC2 Mux'
+ 		value DMIC1
+@@ -2187,7 +2198,7 @@
+ 			item.2 'DIG MIX'
+ 		}
+ 	}
+-	control.193 {
++	control.194 {
+ 		iface MIXER
+ 		name 'Stereo ADC1 Mux'
+ 		value ADC
+@@ -2199,7 +2210,7 @@
+ 			item.1 ADC
+ 		}
+ 	}
+-	control.194 {
++	control.195 {
+ 		iface MIXER
+ 		name 'Mono ADC L2 Mux'
+ 		value 'DMIC L1'
+@@ -2212,7 +2223,7 @@
+ 			item.2 'Mono DAC MIXL'
+ 		}
+ 	}
+-	control.195 {
++	control.196 {
+ 		iface MIXER
+ 		name 'Mono ADC L1 Mux'
+ 		value ADCL
+@@ -2224,7 +2235,7 @@
+ 			item.1 ADCL
+ 		}
+ 	}
+-	control.196 {
++	control.197 {
+ 		iface MIXER
+ 		name 'Mono ADC R1 Mux'
+ 		value ADCR
+@@ -2236,7 +2247,7 @@
+ 			item.1 ADCR
+ 		}
+ 	}
+-	control.197 {
++	control.198 {
+ 		iface MIXER
+ 		name 'Mono ADC R2 Mux'
+ 		value 'DMIC R1'
+@@ -2249,7 +2260,7 @@
+ 			item.2 'Mono DAC MIXR'
+ 		}
+ 	}
+-	control.198 {
++	control.199 {
+ 		iface MIXER
+ 		name 'Stereo ADC MIXL ADC1 Switch'
+ 		value true
+@@ -2259,7 +2270,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.199 {
++	control.200 {
+ 		iface MIXER
+ 		name 'Stereo ADC MIXL ADC2 Switch'
+ 		value false
+@@ -2269,7 +2280,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.200 {
++	control.201 {
+ 		iface MIXER
+ 		name 'Stereo ADC MIXR ADC1 Switch'
+ 		value true
+@@ -2279,7 +2290,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.201 {
++	control.202 {
+ 		iface MIXER
+ 		name 'Stereo ADC MIXR ADC2 Switch'
+ 		value false
+@@ -2289,17 +2300,17 @@
+ 			count 1
+ 		}
+ 	}
+-	control.202 {
++	control.203 {
+ 		iface MIXER
+ 		name 'Mono ADC MIXL ADC1 Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.203 {
++	control.204 {
+ 		iface MIXER
+ 		name 'Mono ADC MIXL ADC2 Switch'
+ 		value false
+@@ -2309,17 +2320,17 @@
+ 			count 1
+ 		}
+ 	}
+-	control.204 {
++	control.205 {
+ 		iface MIXER
+ 		name 'Mono ADC MIXR ADC1 Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.205 {
++	control.206 {
+ 		iface MIXER
+ 		name 'Mono ADC MIXR ADC2 Switch'
+ 		value false
+@@ -2329,7 +2340,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.206 {
++	control.207 {
+ 		iface MIXER
+ 		name 'DAI select'
+ 		value '1:1|2:2'
+@@ -2343,7 +2354,7 @@
+ 			item.3 '1:2|2:2'
+ 		}
+ 	}
+-	control.207 {
++	control.208 {
+ 		iface MIXER
+ 		name 'SDI select'
+ 		value IF1
+@@ -2355,7 +2366,7 @@
+ 			item.1 IF2
+ 		}
+ 	}
+-	control.208 {
++	control.209 {
+ 		iface MIXER
+ 		name 'DAC MIXL Stereo ADC Switch'
+ 		value false
+@@ -2365,7 +2376,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.209 {
++	control.210 {
+ 		iface MIXER
+ 		name 'DAC MIXL INF1 Switch'
+ 		value true
+@@ -2375,7 +2386,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.210 {
++	control.211 {
+ 		iface MIXER
+ 		name 'DAC MIXR Stereo ADC Switch'
+ 		value false
+@@ -2385,7 +2396,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.211 {
++	control.212 {
+ 		iface MIXER
+ 		name 'DAC MIXR INF1 Switch'
+ 		value true
+@@ -2395,7 +2406,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.212 {
++	control.213 {
+ 		iface MIXER
+ 		name 'Mono DAC MIXL DAC L1 Switch'
+ 		value false
+@@ -2405,7 +2416,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.213 {
++	control.214 {
+ 		iface MIXER
+ 		name 'Mono DAC MIXL DAC L2 Switch'
+ 		value false
+@@ -2415,7 +2426,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.214 {
++	control.215 {
+ 		iface MIXER
+ 		name 'Mono DAC MIXL DAC R2 Switch'
+ 		value false
+@@ -2425,7 +2436,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.215 {
++	control.216 {
+ 		iface MIXER
+ 		name 'Mono DAC MIXR DAC R1 Switch'
+ 		value false
+@@ -2435,7 +2446,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.216 {
++	control.217 {
+ 		iface MIXER
+ 		name 'Mono DAC MIXR DAC R2 Switch'
+ 		value false
+@@ -2445,7 +2456,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.217 {
++	control.218 {
+ 		iface MIXER
+ 		name 'Mono DAC MIXR DAC L2 Switch'
+ 		value false
+@@ -2455,7 +2466,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.218 {
++	control.219 {
+ 		iface MIXER
+ 		name 'DIG MIXL DAC L1 Switch'
+ 		value false
+@@ -2465,7 +2476,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.219 {
++	control.220 {
+ 		iface MIXER
+ 		name 'DIG MIXL DAC L2 Switch'
+ 		value true
+@@ -2475,7 +2486,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.220 {
++	control.221 {
+ 		iface MIXER
+ 		name 'DIG MIXR DAC R1 Switch'
+ 		value false
+@@ -2485,7 +2496,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.221 {
++	control.222 {
+ 		iface MIXER
+ 		name 'DIG MIXR DAC R2 Switch'
+ 		value false
+@@ -2495,7 +2506,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.222 {
++	control.223 {
+ 		iface MIXER
+ 		name 'SPK MIXL REC MIXL Switch'
+ 		value false
+@@ -2505,7 +2516,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.223 {
++	control.224 {
+ 		iface MIXER
+ 		name 'SPK MIXL INL Switch'
+ 		value false
+@@ -2515,7 +2526,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.224 {
++	control.225 {
+ 		iface MIXER
+ 		name 'SPK MIXL DAC L1 Switch'
+ 		value true
+@@ -2525,7 +2536,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.225 {
++	control.226 {
+ 		iface MIXER
+ 		name 'SPK MIXL DAC L2 Switch'
+ 		value false
+@@ -2535,7 +2546,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.226 {
++	control.227 {
+ 		iface MIXER
+ 		name 'SPK MIXL OUT MIXL Switch'
+ 		value false
+@@ -2545,7 +2556,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.227 {
++	control.228 {
+ 		iface MIXER
+ 		name 'SPK MIXR REC MIXR Switch'
+ 		value false
+@@ -2555,7 +2566,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.228 {
++	control.229 {
+ 		iface MIXER
+ 		name 'SPK MIXR INR Switch'
+ 		value false
+@@ -2565,7 +2576,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.229 {
++	control.230 {
+ 		iface MIXER
+ 		name 'SPK MIXR DAC R1 Switch'
+ 		value true
+@@ -2575,7 +2586,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.230 {
++	control.231 {
+ 		iface MIXER
+ 		name 'SPK MIXR DAC R2 Switch'
+ 		value false
+@@ -2585,7 +2596,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.231 {
++	control.232 {
+ 		iface MIXER
+ 		name 'SPK MIXR OUT MIXR Switch'
+ 		value false
+@@ -2595,7 +2606,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.232 {
++	control.233 {
+ 		iface MIXER
+ 		name 'SPOL MIX DAC R1 Switch'
+ 		value false
+@@ -2605,7 +2616,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.233 {
++	control.234 {
+ 		iface MIXER
+ 		name 'SPOL MIX DAC L1 Switch'
+ 		value false
+@@ -2615,17 +2626,17 @@
+ 			count 1
+ 		}
+ 	}
+-	control.234 {
++	control.235 {
+ 		iface MIXER
+ 		name 'SPOL MIX SPKVOL R Switch'
+-		value true
++		value false
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.235 {
++	control.236 {
+ 		iface MIXER
+ 		name 'SPOL MIX SPKVOL L Switch'
+ 		value true
+@@ -2635,7 +2646,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.236 {
++	control.237 {
+ 		iface MIXER
+ 		name 'SPOL MIX BST1 Switch'
+ 		value false
+@@ -2645,7 +2656,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.237 {
++	control.238 {
+ 		iface MIXER
+ 		name 'SPOR MIX DAC R1 Switch'
+ 		value false
+@@ -2655,7 +2666,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.238 {
++	control.239 {
+ 		iface MIXER
+ 		name 'SPOR MIX SPKVOL R Switch'
+ 		value true
+@@ -2665,7 +2676,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.239 {
++	control.240 {
+ 		iface MIXER
+ 		name 'SPOR MIX BST1 Switch'
+ 		value false
+@@ -2675,7 +2686,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.240 {
++	control.241 {
+ 		iface MIXER
+ 		name 'LOUT MIX DAC L1 Switch'
+ 		value false
+@@ -2685,7 +2696,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.241 {
++	control.242 {
+ 		iface MIXER
+ 		name 'LOUT MIX DAC R1 Switch'
+ 		value false
+@@ -2695,7 +2706,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.242 {
++	control.243 {
+ 		iface MIXER
+ 		name 'LOUT MIX OUTVOL L Switch'
+ 		value false
+@@ -2705,7 +2716,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.243 {
++	control.244 {
+ 		iface MIXER
+ 		name 'LOUT MIX OUTVOL R Switch'
+ 		value false
+@@ -2715,7 +2726,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.244 {
++	control.245 {
+ 		iface MIXER
+ 		name 'Speaker L Playback Switch'
+ 		value true
+@@ -2725,7 +2736,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.245 {
++	control.246 {
+ 		iface MIXER
+ 		name 'Speaker R Playback Switch'
+ 		value true
+@@ -2735,27 +2746,27 @@
+ 			count 1
+ 		}
+ 	}
+-	control.246 {
++	control.247 {
+ 		iface MIXER
+ 		name 'HP L Playback Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.247 {
++	control.248 {
+ 		iface MIXER
+ 		name 'HP R Playback Switch'
+-		value false
++		value true
+ 		comment {
+ 			access 'read write'
+ 			type BOOLEAN
+ 			count 1
+ 		}
+ 	}
+-	control.248 {
++	control.249 {
+ 		iface MIXER
+ 		name 'DAC L2 Mux'
+ 		value IF2
+@@ -2767,7 +2778,7 @@
+ 			item.1 'Base L/R'
+ 		}
+ 	}
+-	control.249 {
++	control.250 {
+ 		iface MIXER
+ 		name 'DAC R2 Mux'
+ 		value IF2
+@@ -2778,7 +2789,7 @@
+ 			item.0 IF2
+ 		}
+ 	}
+-	control.250 {
++	control.251 {
+ 		iface MIXER
+ 		name 'Stereo DAC MIXL DAC L1 Switch'
+ 		value true
+@@ -2788,7 +2799,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.251 {
++	control.252 {
+ 		iface MIXER
+ 		name 'Stereo DAC MIXL DAC L2 Switch'
+ 		value true
+@@ -2798,7 +2809,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.252 {
++	control.253 {
+ 		iface MIXER
+ 		name 'Stereo DAC MIXL ANC Switch'
+ 		value false
+@@ -2808,7 +2819,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.253 {
++	control.254 {
+ 		iface MIXER
+ 		name 'Stereo DAC MIXR DAC R1 Switch'
+ 		value true
+@@ -2818,7 +2829,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.254 {
++	control.255 {
+ 		iface MIXER
+ 		name 'Stereo DAC MIXR DAC R2 Switch'
+ 		value true
+@@ -2828,7 +2839,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.255 {
++	control.256 {
+ 		iface MIXER
+ 		name 'Stereo DAC MIXR ANC Switch'
+ 		value false
+@@ -2838,7 +2849,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.256 {
++	control.257 {
+ 		iface MIXER
+ 		name 'OUT MIXL SPK MIXL Switch'
+ 		value false
+@@ -2848,7 +2859,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.257 {
++	control.258 {
+ 		iface MIXER
+ 		name 'OUT MIXL BST1 Switch'
+ 		value false
+@@ -2858,7 +2869,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.258 {
++	control.259 {
+ 		iface MIXER
+ 		name 'OUT MIXL INL Switch'
+ 		value false
+@@ -2868,7 +2879,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.259 {
++	control.260 {
+ 		iface MIXER
+ 		name 'OUT MIXL REC MIXL Switch'
+ 		value false
+@@ -2878,7 +2889,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.260 {
++	control.261 {
+ 		iface MIXER
+ 		name 'OUT MIXL DAC R2 Switch'
+ 		value false
+@@ -2888,7 +2899,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.261 {
++	control.262 {
+ 		iface MIXER
+ 		name 'OUT MIXL DAC L2 Switch'
+ 		value false
+@@ -2898,7 +2909,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.262 {
++	control.263 {
+ 		iface MIXER
+ 		name 'OUT MIXL DAC L1 Switch'
+ 		value true
+@@ -2908,7 +2919,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.263 {
++	control.264 {
+ 		iface MIXER
+ 		name 'OUT MIXR SPK MIXR Switch'
+ 		value false
+@@ -2918,7 +2929,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.264 {
++	control.265 {
+ 		iface MIXER
+ 		name 'OUT MIXR BST2 Switch'
+ 		value false
+@@ -2928,7 +2939,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.265 {
++	control.266 {
+ 		iface MIXER
+ 		name 'OUT MIXR BST1 Switch'
+ 		value false
+@@ -2938,7 +2949,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.266 {
++	control.267 {
+ 		iface MIXER
+ 		name 'OUT MIXR INR Switch'
+ 		value false
+@@ -2948,7 +2959,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.267 {
++	control.268 {
+ 		iface MIXER
+ 		name 'OUT MIXR REC MIXR Switch'
+ 		value false
+@@ -2958,7 +2969,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.268 {
++	control.269 {
+ 		iface MIXER
+ 		name 'OUT MIXR DAC L2 Switch'
+ 		value false
+@@ -2968,7 +2979,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.269 {
++	control.270 {
+ 		iface MIXER
+ 		name 'OUT MIXR DAC R2 Switch'
+ 		value false
+@@ -2978,7 +2989,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.270 {
++	control.271 {
+ 		iface MIXER
+ 		name 'OUT MIXR DAC R1 Switch'
+ 		value true
+@@ -2988,7 +2999,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.271 {
++	control.272 {
+ 		iface MIXER
+ 		name 'HPO MIX DAC2 Switch'
+ 		value false
+@@ -2998,7 +3009,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.272 {
++	control.273 {
+ 		iface MIXER
+ 		name 'HPO MIX DAC1 Switch'
+ 		value false
+@@ -3008,7 +3019,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.273 {
++	control.274 {
+ 		iface MIXER
+ 		name 'HPO MIX HPVOL Switch'
+ 		value true
+@@ -3018,7 +3029,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.274 {
++	control.275 {
+ 		iface MIXER
+ 		name 'Mono MIX DAC R2 Switch'
+ 		value false
+@@ -3028,7 +3039,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.275 {
++	control.276 {
+ 		iface MIXER
+ 		name 'Mono MIX DAC L2 Switch'
+ 		value false
+@@ -3038,7 +3049,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.276 {
++	control.277 {
+ 		iface MIXER
+ 		name 'Mono MIX OUTVOL R Switch'
+ 		value false
+@@ -3048,7 +3059,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.277 {
++	control.278 {
+ 		iface MIXER
+ 		name 'Mono MIX OUTVOL L Switch'
+ 		value false
+@@ -3058,7 +3069,7 @@
+ 			count 1
+ 		}
+ 	}
+-	control.278 {
++	control.279 {
+ 		iface MIXER
+ 		name 'Mono MIX BST1 Switch'
+ 		value false

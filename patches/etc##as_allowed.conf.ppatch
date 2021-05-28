@@ -1,0 +1,14 @@
+--- etc/as_allowed.conf	2019-08-08 17:14:10.000000000 +0600
++++ ../mount/system/etc/as_allowed.conf	2021-02-14 12:25:05.000000000 +0600
+@@ -10,7 +10,9 @@
+ com.baidu.input
+ com.android.inputmethod.latin
+ com.iflytek.inputmethod
++com.topjohnwu.magisk
+ com.sohu.inputmethod.sogou.x86
+ com.tencent.qqpinyin
+ com.sohu.inputmethod.sogou
+-com.iflytek.inputmethod.pad
+\ No newline at end of file
++com.iflytek.inputmethod.pad
++com.pittvandewitt.viperfx

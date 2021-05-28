@@ -1,0 +1,34 @@
+--- etc/compat_app.conf	2019-08-08 17:22:48.000000000 +0600
++++ ../mount/system/etc/compat_app.conf	2020-01-13 17:51:03.000000000 +0600
+@@ -252,7 +252,6 @@
+ com.meitu.meiyancamera 0
+ com.ijinshan.browser_fast 0
+ com.gome.eshopnew 0
+-jackpal.androidterm 0
+ com.androidesk 0
+ com.tencent.androidqqmail 0
+ com.youdao.dict 0
+@@ -946,6 +945,8 @@
+ com.ea.game.simpsons4_row 1
+ com.catpaw.mgame2.uc 1
+ com.tencent.tmgp.rxcq 1
++com.activision.callofduty.shooter 2
++com.garena.game.codm 2
+ com.realarcade.DOJ 2
+ com.nekki.shadowfight 2
+ jp.funsolution.nensho_eng 2
+@@ -954,6 +955,7 @@
+ com.baidu.tieba 2
+ com.imgo.pad 2
+ com.gbits.atm.anzhi 2
++gearlock.wrapper.axon 2
+ com.epicwaronline.ms 2
+ com.supercell.clashofclans 2
+ com.kiloo.subwaysurf 2
+@@ -1222,4 +1224,4 @@
+ com.android.settings 5
+ com.chaozhuo.filemanager.phoenixos 5
+ ne.lushi.lushilauncher 5
+-com.chaozhuo.keymap 5
+\ No newline at end of file
++com.chaozhuo.keymap 5
