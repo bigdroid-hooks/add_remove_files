@@ -1,38 +1,26 @@
-#!/usr/bin/env bash
-
 #           Variables - BigDroid Internals
 #           - Only for advanced scripting -
 #           ###############################
+
+#   SRC_DIR             % The 'src' dir is the mountpoint of the project operating-system IMAGE.
 #
-#   BASE_DIR            % The root dir where you find files like: bigdroid, bin, src.
-#                       % Hope it explains the rest.
-#
-#   SRC_DIR             % The 'src' dir under BASE_DIR.
-#
-#   HOOKS_DIR           % The 'hooks' dir under BASE_DIR.
-#
-#   HOOK_BASE           % This variable points to the root-dir
-#                       % of every bigdroid hook which is being run during their runtime.
+#   HOOK_DIR            % This variable points to the root-dir
+#                       % of a bigdroid hook which is being run.
 #
 #   MOUNT_DIR           % The parent dir which holds other child mountpoint dirs.
 #                       % Followed by: system, secondary_ramdisk, initial_ramdisk and install_ramdisk.
-#                       % We also have SYSTEM_MOUNT_DIR, SECONDARY_RAMDISK_MOUNT_DIR
-#                       % INITIAL_RAMDISK_MOUNT_DIR and INSTALL_RAMDISK_MOUNT_DIR variables.
-#
-#   ISO_DIR             % Your configured ISO by the '--setup-iso' argument is cached in this dir.
-#
-#   BUILD_DIR           % This dir is used as the temporary boilerplate while building an ISO/IMAGE.
+#                       % Use `SYSTEM_MOUNT_DIR`, `SECONDARY_RAMDISK_MOUNT_DIR`
+#                       % `INITIAL_RAMDISK_MOUNT_DIR`, `INSTALL_RAMDISK_MOUNT_DIR` variables for path.
 #
 #   TMP_DIR             % You can use this dir for storing temporary files.
-#                       % It's more like '/tmp' as in your linux distro.
+#                       % It's equivalent '/tmp' dir but for bigdroid hooks.
 #
-#   OVERLAY_DIR         % The overlay dir under BASE_DIR
+#   SECONDARY_RAMDISK   % This is either true or false aka a bolean.
+#                       % Depends on whether the project operating-system has a ramdisk.img
 #
-#   DISTRO_NAME         % Your android distro name as per 'hooks/distro.sh' or the defaults.
+#   SYSTEM_IMAGE        % This points to the project system image (system.sfs or system.img) file.
 #
-#   DISTRO_VERSION      % Your android distro version as per 'hooks/distro.sh' or the defaults.
-#
-#   @@ Protip: Take a look at 'src/main.sh'.
+#   @@ Tip: Also all the varaibles defined in the project `Bigdroid.meta` can be used.
 
 
 
@@ -40,11 +28,11 @@
 #              - For easy hooks scripting -
 #           ##################################
 #
-#   gclone              % Copy files preserving all their attrs with progress indicator.
-#                       % Example: `gclone "$HOOK_BASE/myfile.txt" "$SYSTEM_DIR/lib64"`
+#   gclone              % Copy(rsync) files preserving all their attrs with progress indicator.
+#                       % Example: `gclone "$HOOK_DIR/myfile.so" "$SYSTEM_DIR/lib64"`
 #
 #   wipedir             % Easily wipe/empty a dir(childs) without removing it's parent.
-#                       % Example: `wipedir "$MOUNT_DIR_INSTALL_RAMDISK/grub"`
+#                       % Example: `wipedir "$INSTALL_RAMDISK_MOUNT_DIR/grub"`
 #
 #   @@ Protip: Take a look at 'src/utils.sh'
 #
@@ -55,29 +43,19 @@
 #     - Some native gearlock vars and functions -
 #           ###############################
 #
-#   %% Simply take a look at 'src/libgearlock.sh' to know
+#   %% Simply take a look at 'https://github.com/bigdroid/bigdroid/blob/main/src/libgearlock.sh' to know
 #   %% which gearlock variables and functions are available for use.
 
 
-
-#               An example hook script
-#           - To give you some quick idea -
-#           ###############################
-
-## Okay so here we go...
-## Basically if you wanna start with this example script,
-## then copy this `example_hook` dir into `hooks/` dir.
-## Then start up editing it's `bd.hook.sh`.
-
-_src_dir="$HOOK_BASE/src"
-_patches_dir="$HOOK_BASE/patches"
+_src_dir="$HOOK_DIR/src"
+_patches_dir="$HOOK_DIR/patches"
 DIRS=(
 	"${SYSTEM_MOUNT_DIR}"
 	"${INITIAL_RAMDISK_MOUNT_DIR}"
 	"${SECONDARY_RAMDISK_MOUNT_DIR}"
 	"${INSTALL_RAMDISK_MOUNT_DIR}"
 )
-_removal_list="$HOOK_BASE/removal_list"
+_removal_list="$HOOK_DIR/removal_list"
 
 # for _dir in "${DIRS[@]}"; do
 # 	eval "$_dir=\"$_src_dir/$_dir\""
@@ -85,7 +63,7 @@ _removal_list="$HOOK_BASE/removal_list"
 
 ### Process removal list if required
 if test -e "$_removal_list"; then
-	PFUNCNAME="$CODENAME" println "Removing files"
+	log::info "Removing bloaty files";
 	mapfile -t _removal_list < "$_removal_list"
 	for _file in "${_removal_list[@]}"; do
 		_target="$(eval "echo \"$_file\"")"
@@ -100,12 +78,12 @@ fi
 mapfile -t _patches < <(find "$_patches_dir" -mindepth 1 -type f -name '*.ppatch')
 for _patch in "${_patches[@]}"; do
 	_real_path="$SYSTEM_DIR/$(sed 's|##|/|g; s|.ppatch||g' <<<"${_patch##*/}")"
-	PFUNCNAME="$CODENAME" println "Applying patches for ${_real_path##*/}"
+	log::info "Applying patches for ${_real_path##*/}"
 	patch -s "$_real_path" < "$_patch"
 	unset _real_path
 done
 
-cd "$_src_dir" || exit
+cd "$_src_dir"
 for _dir in "${DIRS[@]}"; do
 
 # 	case "$_dir" in
@@ -141,7 +119,7 @@ for _dir in "${DIRS[@]}"; do
 	### Add files
 	_select="${_dir##*/}"
 	if test -e "$_select"; then
-		PFUNCNAME="$CODENAME" println "Adding files for $_select"
+		log::info "Adding files for $_select"
 		find "$_select" -type d -exec chmod 755 {} \;
 		find "$_select" -type f -exec chmod 644 {} \;
 		find "$_select" -mindepth 1 -type d -name '*bin*' -exec chmod -R 755 {} \;
