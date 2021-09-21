@@ -1,4 +1,3 @@
-#           Variables - BigDroid Internals
 #           - Only for advanced scripting -
 #           ###############################
 
